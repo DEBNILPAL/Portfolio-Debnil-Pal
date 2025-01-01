@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Debnil Pal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #b1b9a8, #fad0c4);
+            overflow-x: hidden;
+            animation: gradientBackground 10s infinite alternate;
+            font-size: 18px; /* Increased font size */
+        }
+        header {
+            background: linear-gradient(90deg, #adb9bf, #c394ab);
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+            animation: fadeInHeader 2s ease-in-out;
+        }
+        header h1 {
+            margin: 0;
+            color: #1b032d; /* White color for visibility */
+            font-size: 3rem; /* Larger size for visibility */
+            animation: textColorChange 5s ease-in-out infinite;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+            font-size: 1.2rem; /* Increased font size */
+            animation: bounceIn 1s ease-in-out;
+        }
+        nav a:hover {
+            transform: scale(1.1);
+            background-color: #fff;
+            color: #ff6a00;
+        }
+        section {
+            display: none; /* Hide sections initially */
+            padding: 2rem;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 2rem; /* Increased size for titles */
+            animation: titleColorChange 4s ease-in-out infinite;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 1rem;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            animation: zoomIn 0.8s ease-in-out;
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            animation: fadeInFooter 2s ease-in-out;
+            margin-top: auto;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .quote {
+            font-style: italic;
+            text-align: center;
+            margin: 2rem 0;
+            color: #555;
+            animation: quoteColorChange 3s ease-in-out infinite;
+        }
+        .images-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .images-container img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .images-container img:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeInHeader {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInFooter {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        @keyframes gradientBackground {
+            0% { background: linear-gradient(to bottom, #ff9a9e, #fad0c4); }
+            100% { background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); }
+        }
+        @keyframes textColorChange {
+            0%, 100% { color: #ff6a00; }
+            50% { color: #ee0979; }
+        }
+        @keyframes titleColorChange {
+            0%, 100% { color: #333; }
+            50% { color: #ff6a00; }
+        }
+        @keyframes quoteColorChange {
+            0%, 100% { color: #555; }
+            50% { color: #ff6a00; }
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            .images-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .images-container img {
+                max-width: 90%;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px;
+            }
+            nav a {
+                padding: 0.5rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Debnil Pal's Portfolio</h1>
+        <nav>
+            <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+            <a href="javascript:void(0);" onclick="showSection('about')">About</a>
+            <a href="javascript:void(0);" onclick="showSection('projects')">Projects</a>
+            <a href="javascript:void(0);" onclick="showSection('publish')">Publish</a>
+            <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2 class="section-title">Welcome!</h2>
+        <div class="container">
+            <p class="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
+            <p class="quote">"Success is not the key to happiness. Happiness is the key to success." - Albert Schweitzer</p>
+            <p class="quote">"In the middle of every difficulty lies opportunity." - Albert Einstein</p>
+            <p class="quote">"Dream big and dare to fail." - Norman Vaughan</p>
+        </div>
+        <div class="images-container">
+            <img src="https://png.pngtree.com/png-vector/20231214/ourmid/pngtree-young-programmer-writing-program-code-png-image_11353939.png" alt="Coding illustration">
+            <img src="https://png.pngtree.com/png-vector/20240321/ourlarge/pngtree-machine-learning-concept-png-image_12021852.png" alt="Machine Learning concept">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_eKurv3zYIOB2-mDriImZNcb7igvCclFLvQ&s" alt="AI technology image">
+            <img src="https://img.pikbest.com/png-images/20241210/productive-web-developer-workspace-with-laptop-and-inspirational-desk-accessories_11235388.png!bw700" alt="Inspirational work setup">
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="container">
+            <p>
+
+                Hello! I am a BTech student with a strong passion for technology and innovation. My primary interests lie in Machine Learning (ML), Artificial Intelligence (AI), Cybersecurity, and Blockchain. I am constantly exploring how these technologies intersect to solve real-world problems and shape the future.
+                
+                I have a solid foundation in programming, with expertise in Python and its diverse libraries, as well as experience in C, C++, HTML, CSS, and JavaScript. These skills enable me to work on a variety of projects, from data-driven solutions to web development.
+                
+                As I continue to grow my knowledge and experience, my ultimate goal is to become a researcher, contributing to advancements in the fields of ML, AI, and cybersecurity. I am excited to collaborate with like-minded individuals and learn from experts in the field as I work towards creating impactful innovations.
+                
+                Feel free to explore my portfolio to see some of the projects I've worked on and the areas I am passionate about. Let's connect and collaborate!</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="container">
+            <p>Here are some of my featured projects:</p>
+            <ul>
+                <li>Project 1: Description and link</li>
+                <li>Project 2: Description and link</li>
+                <li>Project 3: Description and link</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="publish">
+        <h2 class="section-title">Publish</h2>
+        <div class="container">
+            <p>Check out my articles and blogs on web development and AI:</p>
+            <ul>
+                <li>Article 1: Link</li>
+                <li>Article 2: Link</li>
+                <li>Article 3: Link</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="container">
+            <p>If you'd like to get in touch, feel free to reach out:</p>
+            <p>Email: <a href="tanu8972721445@gmail.com">tanu8972721445@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/debnil-pal-960502285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" style="color: #ff6a00; text-decoration: none;">Debnil Pal</a></p>
+            <p>Youtube: <a href="https://youtube.com/@debnilpal-b7f?feature=shared" target="_blank" style="color: #ff6a00; text-decoration: none;">Debnil Pal</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100091180033224" target="_blank" style="color: #ff6a00; text-decoration: none;">Debnil Pal</a></p>
+            <p>Instagram ID: debnilpal</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Debnil Pal's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Show Home section by default
+        document.addEventListener("DOMContentLoaded", function() {
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
+
+
